@@ -132,6 +132,10 @@ blockquote small{display:block;font-family:var(--f-body);font-size:12.5px;margin
 .fi>i{margin-top:2px}
 .fi b{font-size:15px}
 .fi p{margin:2px 0 0;font-size:14px;color:var(--muted)}
+.pinwrap{position:relative;line-height:0}
+.pinwrap>i{position:absolute;transform:translate(-50%,-50%);font-style:normal;display:grid;place-items:center;min-width:24px;height:24px;padding:0 6px;border-radius:12px;background:#D93025;color:#fff;font-size:12.5px;font-weight:700;line-height:1;box-shadow:0 0 0 2px #fff;font-variant-numeric:tabular-nums}
+.shot.home{max-width:none}
+.fi>i{background:#D93025;color:#fff}
 .shot{max-width:760px;margin:14px 0 4px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px}
 .shot img{display:block;width:100%;height:auto;border-radius:6px;background:#fff}
 .shot figcaption{font-size:13px;color:var(--muted);margin-top:8px}
@@ -146,6 +150,8 @@ footer{margin-top:56px;padding-top:18px;border-top:1px solid var(--line);color:v
     padding-block:14px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
   body.toc-closed main{zoom:1}
   .grid3,.files,.feat{grid-template-columns:minmax(0,1fr)}
+  .shot.home{overflow-x:auto}
+  .pinwrap{min-width:680px}
   .mock{grid-template-columns:minmax(0,1fr)}
   .mock-side{border-right:0;border-bottom:1px solid var(--line);flex-direction:row;flex-wrap:wrap}
   .mock-logo{width:100%}
@@ -224,55 +230,17 @@ footer{margin-top:56px;padding-top:18px;border-top:1px solid var(--line);color:v
   <p class="goal">일반 챗봇과 다른 점은 두 가지입니다. <b>회사 자료를 찾아서 답하고</b>, <b>어디서 찾았는지(출처)를 함께 보여 준다</b>는 점입니다.</p>
 
   <h3>화면 둘러보기</h3>
-  <p>처음 들어가면 왼쪽에 메뉴, 가운데에 채팅창이 있습니다. 번호를 따라 각 기능이 무엇인지 간단히 알아보세요.</p>
-  <div class="mock" role="img" aria-label="Gemini Enterprise 화면 구성 그림: 왼쪽 메뉴 7개와 가운데 채팅창 도구 4개에 번호가 붙어 있음">
-    <div class="mock-side">
-      <div class="mock-logo">Gemini Enterprise</div>
-      <div class="mi"><i>1</i>새 채팅</div>
-      <div class="mi"><i>2</i>수신함</div>
-      <div class="mi"><i>3</i>검색</div>
-      <div class="mi"><i>4</i>라이브러리</div>
-      <div class="mi"><i>5</i>기술</div>
-      <div class="mi"><i>6</i>에이전트</div>
-      <div class="mi sub">Deep Research · Gemini Notebook · 회사 에이전트</div>
-      <div class="mi"><i>7</i>최근 대화</div>
-      <div class="mi sub">지난 대화 목록</div>
-    </div>
-    <div class="mock-main">
-      <div class="mock-hello">무엇을 도와드릴까요?</div>
-      <div class="mock-box">
-        <div class="mock-ph">Gemini에게 물어보기</div>
-        <div class="mock-tools">
-          <span class="mt"><i>8</i>+ 파일</span>
-          <span class="mt"><i>9</i>도구·Connectors</span>
-          <span class="mt right"><i>10</i>자동 ▾</span>
-        </div>
-      </div>
-    </div>
-  </div>
-  <p class="small">화면 구성을 단순하게 그린 그림입니다. 메뉴 이름과 위치는 회사 설정과 업데이트에 따라 조금 다를 수 있습니다.</p>
+  <p>처음 들어가면 왼쪽에 메뉴, 가운데에 채팅창이 있습니다. 그림의 번호를 따라 각 기능이 무엇인지 간단히 알아보세요.</p>
+  <figure class="shot home"><div class="pinwrap"><img src="img/ge-home.webp" alt="Gemini Enterprise 첫 화면. 왼쪽 메뉴(새 채팅, 수신함, 검색, 라이브러리, 프로젝트, 스킬, 에이전트, 최근)와 가운데 채팅창(+, 도구, 커넥터, Auto, 마이크)에 번호가 붙어 있음"><i style="left:16.50%;top:9.05%">1</i><i style="left:16.50%;top:12.97%">2</i><i style="left:16.50%;top:16.97%">3</i><i style="left:16.50%;top:20.89%">4</i><i style="left:16.50%;top:24.89%">5</i><i style="left:16.50%;top:28.81%">6</i><i style="left:15.50%;top:34.73%">7</i><i style="left:15.50%;top:66.41%">8</i><i style="left:6.00%;top:72.32%">9</i><i style="left:15.25%;top:91.64%">10</i><i style="left:40.35%;top:44.56%">11</i><i style="left:43.60%;top:44.56%">12</i><i style="left:46.75%;top:44.56%">13</i><i style="left:85.00%;top:44.56%">14</i><i style="left:89.90%;top:44.56%">15</i></div><figcaption>Gemini Enterprise 첫 화면(휴대폰에서는 옆으로 밀어서 보세요). 개인 정보가 보이는 부분(에이전트 이름, 최근 대화, 사용자 이름)은 회색으로 가렸습니다. 회사 설정에 따라 메뉴가 조금 다를 수 있습니다.</figcaption></figure>
 
-  <div class="feat">
-    <div class="fi"><i>1</i><div><b>새 채팅</b><p>새 대화를 시작합니다. 대부분의 질문은 여기서 합니다.</p></div></div>
-    <div class="fi"><i>2</i><div><b>수신함</b><p>에이전트에게 맡긴 일의 소식이 모이는 곳입니다. "내 확인이 필요함", "오류", "완료"로 나뉘어 보입니다.</p></div></div>
-    <div class="fi"><i>3</i><div><b>검색</b><p>지난 대화, 만든 이미지·영상, 파일을 찾습니다. 대화 제목이나 대화 속 문장, 파일 이름으로 찾을 수 있고, 별표한 항목도 여기서 봅니다.</p></div></div>
-    <div class="fi"><i>4</i><div><b>라이브러리</b><p>지금까지 만든 결과물과 자료를 모아서 다시 찾아보는 곳입니다.</p></div></div>
-    <div class="fi"><i>5</i><div><b>기술 (스킬)</b><p>자주 하는 일의 순서와 답 모양을 저장해 두고 이름만 불러 쓰는 기능입니다. <a href="#skills">업무 3</a>에서 자세히 봅니다.</p></div></div>
-    <div class="fi"><i>6</i><div><b>에이전트</b><p>특정 일을 맡아서 하는 AI 도우미 모음입니다. Google이 만든 <b>Deep Research</b>(깊이 조사해 보고서 작성)와 <b>Gemini Notebook</b>(올린 자료 안에서만 답하는 노트북), 회사에서 만들어 공유한 에이전트가 있습니다. 관리자가 허용하면 코딩 없이 직접 만들 수도 있습니다(Workflow Builder).</p></div></div>
-    <div class="fi"><i>7</i><div><b>최근 대화</b><p>지난 대화를 눌러 이어서 할 수 있습니다. 관리자가 정한 보관 기간이 지나면 자동으로 지워집니다.</p></div></div>
-    <div class="fi"><i>8</i><div><b>+ 파일 올리기</b><p>PDF, 엑셀, 워드, 텍스트, 이미지, 녹음·영상 파일을 올려서 분석합니다. OneDrive에서 바로 가져올 수도 있습니다.</p></div></div>
-    <div class="fi"><i>9</i><div><b>도구·Connectors</b><p>어디서 찾아 답할지 고릅니다. SharePoint, Google 검색 등을 켜고 끕니다. 회사 자료만 보고 답하게 하려면 Google 검색을 끄세요.</p></div></div>
-    <div class="fi"><i>10</i><div><b>모델 선택</b><p>Auto(알아서 고름) · Flash(빠름) · Pro(깊이 생각함) 중에서 고릅니다. 관리자가 켠 경우에만 보입니다.</p></div></div>
-  </div>
+  <div class="feat"><div class="fi"><i>1</i><div><b>새 채팅</b><p>새 대화를 시작합니다. 대부분의 질문은 여기서 합니다.</p></div></div><div class="fi"><i>2</i><div><b>수신함</b><p>에이전트에게 맡긴 일의 소식이 모이는 곳입니다. "내 확인이 필요함", "오류", "완료"로 나뉘어 보입니다.</p></div></div><div class="fi"><i>3</i><div><b>검색</b><p>지난 대화, 만든 이미지·영상, 파일을 찾습니다. 대화 제목이나 대화 속 문장, 파일 이름으로 찾을 수 있고, 별표한 항목도 여기서 봅니다.</p></div></div><div class="fi"><i>4</i><div><b>라이브러리</b><p>지금까지 만든 결과물과 자료를 모아서 다시 찾아보는 곳입니다.</p></div></div><div class="fi"><i>5</i><div><b>프로젝트</b><p>연구 하나에 필요한 자료(최대 50개)를 한곳에 모아 두고 그 안에서만 대화합니다. 내 대화는 나만 봅니다.</p></div></div><div class="fi"><i>6</i><div><b>스킬</b><p>자주 하는 일의 순서와 답 모양을 저장해 두고 이름만 불러 쓰는 기능입니다. <a href="#skills">업무 3</a>에서 자세히 봅니다.</p></div></div><div class="fi"><i>7</i><div><b>에이전트</b><p>특정 일을 맡아 하는 AI 도우미 모음입니다. <b>&gt;</b>를 누르면 Google이 만든 <b>Deep Research</b>(깊이 조사해 보고서 작성)·<b>Gemini Notebook</b>(올린 자료 안에서만 답하는 노트북)과 회사에서 공유한 에이전트를 볼 수 있습니다. 아래 목록은 내가 고정(핀)해 둔 에이전트입니다.</p></div></div><div class="fi"><i>8</i><div><b>새 에이전트</b><p>코딩 없이 나만의 에이전트를 만듭니다(Workflow Builder). 관리자가 허용한 경우에 쓸 수 있습니다.</p></div></div><div class="fi"><i>9</i><div><b>최근</b><p>지난 대화를 눌러 이어서 할 수 있습니다. 관리자가 정한 보관 기간이 지나면 자동으로 지워집니다.</p></div></div><div class="fi"><i>10</i><div><b>Antigravity 살펴보기</b><p>Google의 AI 개발·자동화 도구인 Antigravity를 소개하는 메뉴입니다. 오늘 교육에서는 다루지 않습니다.</p></div></div><div class="fi"><i>11</i><div><b>+ 파일 올리기</b><p>PDF, 엑셀, 워드, 텍스트, 이미지, 녹음·영상 파일을 올려서 분석합니다. OneDrive에서 바로 가져올 수도 있습니다.</p></div></div><div class="fi"><i>12</i><div><b>도구</b><p>Deep Research처럼 답할 때 함께 쓸 기능을 고르는 메뉴입니다. 보이는 항목은 회사 설정에 따라 다릅니다.</p></div></div><div class="fi"><i>13</i><div><b>커넥터</b><p>회사에 연결된 앱(SharePoint, OneDrive, Outlook 등) 가운데 <b>어디서 찾아 답할지</b> 켜고 끕니다. Google 검색도 여기서 끕니다. 회사 자료만 보고 답하게 하려면 원하는 커넥터만 켜고 Google 검색은 끄세요. 처음 쓰는 커넥터는 접근 허용(Authorize)을 한 번 해야 합니다.</p></div></div><div class="fi"><i>14</i><div><b>모델 선택 (Auto)</b><p>Auto(알아서 고름) · Flash(빠름) · Pro(깊이 생각함) 중에서 고릅니다. 보고서 여러 개를 합치거나 분석할 때는 Pro를 권합니다.</p></div></div><div class="fi"><i>15</i><div><b>마이크</b><p>말로 질문합니다. 받아 적은 글을 고친 뒤 보낼 수 있습니다. 관리자가 켠 경우에만 보입니다.</p></div></div></div>
 
   <details class="ex"><summary>그 밖에 알아 두면 좋은 기능</summary><div class="in">
     <div class="tbl"><table class="k">
       <tr><th>기능</th><th>무엇을 하나요</th><th>리서치팀 활용 예</th></tr>
-      <tr><td>프로젝트</td><td>연구 하나에 필요한 자료를 한곳에 모아 두고 그 안에서 대화</td><td>연구별 분석 공간 만들기</td></tr>
       <tr><td>Canvas</td><td>대화 옆 화면에서 문서·발표 자료를 함께 쓰고 고침. Office 형식으로 내보내기 가능</td><td>분석 결과를 보고서 초안으로 다듬기</td></tr>
       <tr><td>Gemini Notebook</td><td>올린 자료 안에서만 답하는 노트북. 음성 요약도 만들어 줌</td><td>연구 자료 묶음을 팀 공부용으로 정리</td></tr>
       <tr><td>이미지·영상 만들기</td><td>설명을 적으면 이미지나 짧은 영상을 만들어 줌</td><td>콘셉트 시안, 페르소나 이미지</td></tr>
-      <tr><td>음성 입력</td><td>채팅창 마이크로 말해서 질문</td><td>이동 중 메모처럼 질문하기</td></tr>
     </table></div>
     <p class="small">회사 관리자가 켠 기능만 화면에 보입니다. 메뉴에 없으면 관리자에게 문의하세요.</p>
   </div></details>
@@ -288,7 +256,7 @@ footer{margin-top:56px;padding-top:18px;border-top:1px solid var(--line);color:v
 
   <h3>오늘 주로 쓸 기능 세 가지</h3>
   <div class="grid3">
-    <div class="card"><h4>채팅</h4><p>물어보면 바로 답합니다. 파일을 올리거나, 채팅창의 <span class="ui">Connectors</span>에서 SharePoint만 켜고 물어볼 수 있습니다.</p><div class="use">빨리 확인할 때 · 문서 몇 개 요약 · 표 만들기</div></div>
+    <div class="card"><h4>채팅</h4><p>물어보면 바로 답합니다. 파일을 올리거나, 채팅창의 <span class="ui">커넥터</span>에서 SharePoint만 켜고 물어볼 수 있습니다.</p><div class="use">빨리 확인할 때 · 문서 몇 개 요약 · 표 만들기</div></div>
     <div class="card"><h4>Deep Research</h4><p>먼저 "이렇게 조사하겠다"는 계획을 보여 주고, 자료를 꼼꼼히 읽은 뒤 출처가 달린 보고서를 써 줍니다. 1~2분짜리 음성 요약도 만들어 줍니다.</p><div class="use">보고서 여러 개를 한꺼번에 정리할 때</div></div>
     <div class="card"><h4>프로젝트</h4><p>연구 하나에 필요한 자료(최대 50개)를 한곳에 모아 두고 그 안에서만 대화합니다. 내 대화 내용은 나만 봅니다.</p><div class="use">한 연구를 여러 번에 나눠 분석할 때</div></div>
   </div>
@@ -303,7 +271,7 @@ footer{margin-top:56px;padding-top:18px;border-top:1px solid var(--line);color:v
 
   <ol class="steps">
     <li><div><h4>먼저 어떤 보고서가 있는지 목록부터 보기</h4>
-      <p>채팅창의 <span class="ui">Connectors</span>를 눌러 SharePoint만 켜고 Google 검색은 끕니다. 그다음 관련 보고서 목록부터 달라고 합니다.</p>
+      <p>채팅창의 <span class="ui">커넥터</span>(화면 그림 13번)를 눌러 SharePoint만 켜고 Google 검색은 끕니다. 그다음 관련 보고서 목록부터 달라고 합니다.</p>
       <div class="prompt"><span class="tag">1단계 · 목록 보기</span>SharePoint에서 2025년 11월부터 2026년 10월 사이에 쓴 리서치 보고서 중 장바구니·쿠폰·결제 또는 쿠팡페이와 관련된 것을 모두 찾아 줘.
 표로 보여 줘: 작성일 | 보고서 제목 | 연구 방법 | 링크</div>
       <ul><li>"최근 12개월"보다 <b>날짜를 직접 적으면</b> 더 정확합니다.</li><li>목록을 먼저 보면 빠진 보고서나 엉뚱한 보고서를 바로 알 수 있습니다.</li></ul>
@@ -432,7 +400,7 @@ footer{margin-top:56px;padding-top:18px;border-top:1px solid var(--line);color:v
 <section id="skills">
   <div class="eyebrow">업무 3 · 6분</div>
   <h2>자주 하는 분석을 스킬로 저장하기</h2>
-  <p class="goal">매번 긴 질문을 다시 쓰지 않도록, 정리하는 순서와 형식을 한 번 저장해 두고 이름만 불러서 쓰는 기능입니다. 화면 메뉴 이름은 <b>기술</b>(영어 화면에서는 Skills)입니다.</p>
+  <p class="goal">매번 긴 질문을 다시 쓰지 않도록, 정리하는 순서와 형식을 한 번 저장해 두고 이름만 불러서 쓰는 기능입니다. 왼쪽 메뉴의 <b>스킬</b>에서 만들고 관리합니다.</p>
 
   <div class="grid3">
     <div class="card"><h4>스킬은 무엇인가요?</h4><p>Gemini에게 주는 <b>저장된 업무 설명서</b>입니다. 무엇을, 어떤 순서로, 어떤 모양으로 답할지 적어 둡니다.</p></div>
@@ -443,7 +411,7 @@ footer{margin-top:56px;padding-top:18px;border-top:1px solid var(--line);color:v
   <h3>스킬 만들기</h3>
   <ol class="steps">
     <li><div><h4>스킬 화면 열기</h4>
-      <p>왼쪽 메뉴에서 <span class="ui">기술</span>을 누릅니다. 세 가지 시작 방법이 나옵니다.</p>
+      <p>왼쪽 메뉴에서 <span class="ui">스킬</span>을 누릅니다. 세 가지 시작 방법이 나옵니다.</p>
       <ul><li><span class="ui">Gemini로 스킬 만들기</span>: 대화하면서 Gemini가 대신 써 줌 (처음이라면 이것)</li>
       <li><span class="ui">스킬 둘러보기</span>: Google이 만들어 둔 스킬이나 동료가 나눠 준 스킬을 설치</li>
       <li><span class="ui">스킬 업로드</span>: 미리 써 둔 <code>SKILL.md</code> 파일이나 ZIP을 올림</li></ul>
@@ -530,13 +498,13 @@ footer{margin-top:56px;padding-top:18px;border-top:1px solid var(--line);color:v
 <section id="faq" class="faq">
   <h2>자주 묻는 질문</h2>
   <details><summary>제가 권한이 없는 SharePoint 문서도 요약되나요?</summary><p>아니요. 내 SharePoint 권한으로 볼 수 있는 문서만 찾아서 씁니다.</p></details>
-  <details><summary>같은 질문을 했는데 동료와 결과가 달라요.</summary><p>볼 수 있는 문서가 다르거나, 고른 모델(Auto·Flash·Pro)이 다르거나, 켜 둔 Connectors가 다를 수 있습니다. AI는 같은 질문에도 표현이 조금씩 달라집니다. 중요한 내용은 출처를 눌러 확인하세요.</p></details>
+  <details><summary>같은 질문을 했는데 동료와 결과가 달라요.</summary><p>볼 수 있는 문서가 다르거나, 고른 모델(Auto·Flash·Pro)이 다르거나, 켜 둔 커넥터가 다를 수 있습니다. AI는 같은 질문에도 표현이 조금씩 달라집니다. 중요한 내용은 출처를 눌러 확인하세요.</p></details>
   <details><summary>SharePoint 문서가 안 찾아져요.</summary><p>SharePoint 접근을 허용(Authorize)했는지, 문서가 암호 걸린 파일이나 보관 폴더에 있지 않은지, 내용이 첨부파일 안에 들어 있지 않은지 확인해 보세요. 그래도 안 되면 관리자에게 문의하세요.</p></details>
   <details><summary>채팅과 Deep Research 중 무엇을 쓰나요?</summary><p>문서 몇 개를 빨리 확인할 때는 채팅, 보고서 여러 개를 기간 단위로 한꺼번에 정리할 때는 Deep Research가 좋습니다. Deep Research는 꼼꼼히 읽는 만큼 시간이 더 걸립니다.</p></details>
   <details><summary>엑셀 설문 파일은 몇 줄까지 되나요?</summary><p>줄 수가 아니라 파일 크기로 정해집니다(엑셀 50MB, CSV 7MB). 파일이 크면 계산하는 데 시간이 더 걸립니다.</p></details>
   <details><summary>녹음 파일을 그대로 올려도 되나요?</summary><p>MP3·MP4는 한 파일에 200MB까지 올릴 수 있습니다. 다만 참가자 개인정보가 들어 있을 수 있으니 회사 규칙을 먼저 확인하고, 되도록 이름을 번호로 바꾼 녹취록(TXT)을 쓰세요.</p></details>
   <details><summary>분석 결과를 팀과 같이 보려면요?</summary><p>프로젝트에 올린 파일은 멤버가 함께 볼 수 있지만, 프로젝트 안의 대화는 만든 사람만 볼 수 있습니다. 결과는 문서로 옮겨서 공유하세요.</p></details>
-  <details><summary>스킬(기술) 메뉴가 안 보여요.</summary><p>관리자가 스킬 기능을 켜야 보입니다. 처음에는 꺼져 있으니 관리자에게 요청하세요. Frontline 라이선스는 스킬을 만들 수 없습니다.</p></details>
+  <details><summary>스킬 메뉴가 안 보여요.</summary><p>관리자가 스킬 기능을 켜야 보입니다. 처음에는 꺼져 있으니 관리자에게 요청하세요. Frontline 라이선스는 스킬을 만들 수 없습니다.</p></details>
 </section>
 
 <section id="data">

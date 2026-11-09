@@ -113,6 +113,25 @@ blockquote small{display:block;font-family:var(--f-body);font-size:12.5px;margin
 .flist a:hover{text-decoration:underline}
 .flist span{color:var(--muted);white-space:nowrap;font-variant-numeric:tabular-nums}
 .k td:first-child{white-space:nowrap}
+/* 화면 구성 그림 */
+.mock{display:grid;grid-template-columns:200px minmax(0,1fr);border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surface);margin:12px 0 6px;font-size:14px}
+.mock-side{background:var(--code-bg);padding:14px 10px;display:flex;flex-direction:column;gap:4px;border-right:1px solid var(--line)}
+.mock-logo{font-weight:700;margin:0 6px 8px}
+.mi{display:flex;align-items:center;gap:8px;padding:5px 6px;border-radius:6px}
+.mi.sub{padding:0 6px 4px 36px;font-size:12px;color:var(--muted)}
+.mock i,.fi>i{font-style:normal;display:inline-grid;place-items:center;flex:none;min-width:22px;height:22px;padding:0 5px;border-radius:11px;background:var(--accent);color:var(--on-accent);font-size:12px;font-weight:700;font-variant-numeric:tabular-nums}
+.mock-main{padding:28px 22px;display:flex;flex-direction:column;justify-content:center;gap:16px;min-height:300px;min-width:0}
+.mock-hello{font-size:22px;font-weight:600;text-align:center;color:var(--muted)}
+.mock-box{border:1px solid var(--line);border-radius:16px;padding:14px 16px;background:var(--surface)}
+.mock-ph{color:var(--muted);margin-bottom:14px}
+.mock-tools{display:flex;flex-wrap:wrap;gap:8px}
+.mt{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:999px;padding:3px 10px 3px 4px;font-size:13px;white-space:nowrap}
+.mt.right{margin-left:auto}
+.feat{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 22px;margin:16px 0}
+.fi{display:grid;grid-template-columns:28px minmax(0,1fr);gap:10px;align-items:start;padding:10px 0;border-bottom:1px solid var(--line)}
+.fi>i{margin-top:2px}
+.fi b{font-size:15px}
+.fi p{margin:2px 0 0;font-size:14px;color:var(--muted)}
 .shot{max-width:760px;margin:14px 0 4px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px}
 .shot img{display:block;width:100%;height:auto;border-radius:6px;background:#fff}
 .shot figcaption{font-size:13px;color:var(--muted);margin-top:8px}
@@ -126,7 +145,12 @@ footer{margin-top:56px;padding-top:18px;border-top:1px solid var(--line);color:v
     max-height:70vh;overflow:auto;background:var(--surface);border-bottom:1px solid var(--line);box-shadow:0 8px 24px rgba(0,0,0,.18);
     padding-block:14px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
   body.toc-closed main{zoom:1}
-  .grid3,.files{grid-template-columns:minmax(0,1fr)}
+  .grid3,.files,.feat{grid-template-columns:minmax(0,1fr)}
+  .mock{grid-template-columns:minmax(0,1fr)}
+  .mock-side{border-right:0;border-bottom:1px solid var(--line);flex-direction:row;flex-wrap:wrap}
+  .mock-logo{width:100%}
+  .mi.sub{display:none}
+  .mock-main{min-height:0;padding:18px 14px}
   .tl div{font-size:10px;padding:0 2px}
   .bar-title{display:none}
   .bar-in{justify-content:space-between}
@@ -199,6 +223,60 @@ footer{margin-top:56px;padding-top:18px;border-top:1px solid var(--line);color:v
   <h2>Gemini Enterprise 알아보기</h2>
   <p class="goal">일반 챗봇과 다른 점은 두 가지입니다. <b>회사 자료를 찾아서 답하고</b>, <b>어디서 찾았는지(출처)를 함께 보여 준다</b>는 점입니다.</p>
 
+  <h3>화면 둘러보기</h3>
+  <p>처음 들어가면 왼쪽에 메뉴, 가운데에 채팅창이 있습니다. 번호를 따라 각 기능이 무엇인지 간단히 알아보세요.</p>
+  <div class="mock" role="img" aria-label="Gemini Enterprise 화면 구성 그림: 왼쪽 메뉴 7개와 가운데 채팅창 도구 4개에 번호가 붙어 있음">
+    <div class="mock-side">
+      <div class="mock-logo">Gemini Enterprise</div>
+      <div class="mi"><i>1</i>새 채팅</div>
+      <div class="mi"><i>2</i>수신함</div>
+      <div class="mi"><i>3</i>검색</div>
+      <div class="mi"><i>4</i>라이브러리</div>
+      <div class="mi"><i>5</i>기술</div>
+      <div class="mi"><i>6</i>에이전트</div>
+      <div class="mi sub">Deep Research · Gemini Notebook · 회사 에이전트</div>
+      <div class="mi"><i>7</i>최근 대화</div>
+      <div class="mi sub">지난 대화 목록</div>
+    </div>
+    <div class="mock-main">
+      <div class="mock-hello">무엇을 도와드릴까요?</div>
+      <div class="mock-box">
+        <div class="mock-ph">Gemini에게 물어보기</div>
+        <div class="mock-tools">
+          <span class="mt"><i>8</i>+ 파일</span>
+          <span class="mt"><i>9</i>도구·Connectors</span>
+          <span class="mt right"><i>10</i>자동 ▾</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="small">화면 구성을 단순하게 그린 그림입니다. 메뉴 이름과 위치는 회사 설정과 업데이트에 따라 조금 다를 수 있습니다.</p>
+
+  <div class="feat">
+    <div class="fi"><i>1</i><div><b>새 채팅</b><p>새 대화를 시작합니다. 대부분의 질문은 여기서 합니다.</p></div></div>
+    <div class="fi"><i>2</i><div><b>수신함</b><p>에이전트에게 맡긴 일의 소식이 모이는 곳입니다. "내 확인이 필요함", "오류", "완료"로 나뉘어 보입니다.</p></div></div>
+    <div class="fi"><i>3</i><div><b>검색</b><p>지난 대화, 만든 이미지·영상, 파일을 찾습니다. 대화 제목이나 대화 속 문장, 파일 이름으로 찾을 수 있고, 별표한 항목도 여기서 봅니다.</p></div></div>
+    <div class="fi"><i>4</i><div><b>라이브러리</b><p>지금까지 만든 결과물과 자료를 모아서 다시 찾아보는 곳입니다.</p></div></div>
+    <div class="fi"><i>5</i><div><b>기술 (스킬)</b><p>자주 하는 일의 순서와 답 모양을 저장해 두고 이름만 불러 쓰는 기능입니다. <a href="#skills">업무 3</a>에서 자세히 봅니다.</p></div></div>
+    <div class="fi"><i>6</i><div><b>에이전트</b><p>특정 일을 맡아서 하는 AI 도우미 모음입니다. Google이 만든 <b>Deep Research</b>(깊이 조사해 보고서 작성)와 <b>Gemini Notebook</b>(올린 자료 안에서만 답하는 노트북), 회사에서 만들어 공유한 에이전트가 있습니다. 관리자가 허용하면 코딩 없이 직접 만들 수도 있습니다(Workflow Builder).</p></div></div>
+    <div class="fi"><i>7</i><div><b>최근 대화</b><p>지난 대화를 눌러 이어서 할 수 있습니다. 관리자가 정한 보관 기간이 지나면 자동으로 지워집니다.</p></div></div>
+    <div class="fi"><i>8</i><div><b>+ 파일 올리기</b><p>PDF, 엑셀, 워드, 텍스트, 이미지, 녹음·영상 파일을 올려서 분석합니다. OneDrive에서 바로 가져올 수도 있습니다.</p></div></div>
+    <div class="fi"><i>9</i><div><b>도구·Connectors</b><p>어디서 찾아 답할지 고릅니다. SharePoint, Google 검색 등을 켜고 끕니다. 회사 자료만 보고 답하게 하려면 Google 검색을 끄세요.</p></div></div>
+    <div class="fi"><i>10</i><div><b>모델 선택</b><p>Auto(알아서 고름) · Flash(빠름) · Pro(깊이 생각함) 중에서 고릅니다. 관리자가 켠 경우에만 보입니다.</p></div></div>
+  </div>
+
+  <details class="ex"><summary>그 밖에 알아 두면 좋은 기능</summary><div class="in">
+    <div class="tbl"><table class="k">
+      <tr><th>기능</th><th>무엇을 하나요</th><th>리서치팀 활용 예</th></tr>
+      <tr><td>프로젝트</td><td>연구 하나에 필요한 자료를 한곳에 모아 두고 그 안에서 대화</td><td>연구별 분석 공간 만들기</td></tr>
+      <tr><td>Canvas</td><td>대화 옆 화면에서 문서·발표 자료를 함께 쓰고 고침. Office 형식으로 내보내기 가능</td><td>분석 결과를 보고서 초안으로 다듬기</td></tr>
+      <tr><td>Gemini Notebook</td><td>올린 자료 안에서만 답하는 노트북. 음성 요약도 만들어 줌</td><td>연구 자료 묶음을 팀 공부용으로 정리</td></tr>
+      <tr><td>이미지·영상 만들기</td><td>설명을 적으면 이미지나 짧은 영상을 만들어 줌</td><td>콘셉트 시안, 페르소나 이미지</td></tr>
+      <tr><td>음성 입력</td><td>채팅창 마이크로 말해서 질문</td><td>이동 중 메모처럼 질문하기</td></tr>
+    </table></div>
+    <p class="small">회사 관리자가 켠 기능만 화면에 보입니다. 메뉴에 없으면 관리자에게 문의하세요.</p>
+  </div></details>
+
   <h3>SharePoint 문서는 어떻게 찾나요?</h3>
   <p>회사 관리자가 Gemini Enterprise와 SharePoint를 미리 연결해 두었습니다. 그래서 질문하면 Gemini가 SharePoint의 문서를 찾아 읽고 답합니다. 연결하는 방식은 두 가지가 있습니다.</p>
   <div class="tbl"><table>
@@ -208,13 +286,13 @@ footer{margin-top:56px;padding-top:18px;border-top:1px solid var(--line);color:v
   </table></div>
   <div class="tip"><b>내가 열어 볼 수 있는 문서만 찾아 줍니다.</b> 내 SharePoint 권한을 기준으로 찾기 때문에 옆자리 동료와 결과가 다를 수 있습니다. 처음 쓸 때 SharePoint 접근을 허용(Authorize)하라는 안내가 나오면 허용을 눌러 주세요.</div>
 
-  <h3>기능 세 가지, 언제 무엇을 쓰나요?</h3>
+  <h3>오늘 주로 쓸 기능 세 가지</h3>
   <div class="grid3">
     <div class="card"><h4>채팅</h4><p>물어보면 바로 답합니다. 파일을 올리거나, 채팅창의 <span class="ui">Connectors</span>에서 SharePoint만 켜고 물어볼 수 있습니다.</p><div class="use">빨리 확인할 때 · 문서 몇 개 요약 · 표 만들기</div></div>
     <div class="card"><h4>Deep Research</h4><p>먼저 "이렇게 조사하겠다"는 계획을 보여 주고, 자료를 꼼꼼히 읽은 뒤 출처가 달린 보고서를 써 줍니다. 1~2분짜리 음성 요약도 만들어 줍니다.</p><div class="use">보고서 여러 개를 한꺼번에 정리할 때</div></div>
     <div class="card"><h4>프로젝트</h4><p>연구 하나에 필요한 자료(최대 50개)를 한곳에 모아 두고 그 안에서만 대화합니다. 내 대화 내용은 나만 봅니다.</p><div class="use">한 연구를 여러 번에 나눠 분석할 때</div></div>
   </div>
-  <p class="small">모델을 고를 수 있다면: <span class="ui">Auto</span> 알아서 고름 · Flash 빠르고 간단한 질문용 · Pro 느리지만 깊이 생각함. 보고서 여러 개를 합치거나 분석할 때는 Pro를 고르세요.</p>
+  <p class="small">보고서 여러 개를 합치거나 분석할 때는 모델 선택에서 Pro를 고르세요.</p>
 </section>
 
 <section id="uc1">
